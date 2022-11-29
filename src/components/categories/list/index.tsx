@@ -1,12 +1,7 @@
-import {
-	View,
-	FlatList,
-	ListRenderItem,
-	StyleSheet,
-	Dimensions,
-} from 'react-native';
 import React from 'react';
+import { FlatList, ListRenderItem, SafeAreaView } from 'react-native';
 import { useDataFetch } from '../../../hooks/useDataFetch';
+import { styles } from './styles';
 import Category from '../single';
 
 const CategoriesList = () => {
@@ -17,21 +12,15 @@ const CategoriesList = () => {
 	);
 
 	return (
-		<View style={styles.container}>
-			<FlatList data={data} renderItem={renderItem} keyExtractor={(i) => i} />
-		</View>
+		<SafeAreaView style={styles.viewContainer}>
+			<FlatList
+				data={data}
+				renderItem={renderItem}
+				keyExtractor={(i) => i}
+				contentContainerStyle={styles.container}
+			/>
+		</SafeAreaView>
 	);
 };
-
-const { height } = Dimensions.get('screen');
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-		marginTop: height * 0.2,
-	},
-});
 
 export default CategoriesList;

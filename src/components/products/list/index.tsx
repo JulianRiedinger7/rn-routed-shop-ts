@@ -1,5 +1,10 @@
 import React from 'react';
-import { ActivityIndicator, FlatList, ListRenderItem } from 'react-native';
+import {
+	ActivityIndicator,
+	FlatList,
+	ListRenderItem,
+	View,
+} from 'react-native';
 import type { Item } from '../../../../types';
 import { RouteProp, useRoute } from '@react-navigation/native';
 import { ShopStackParams } from '../../../navigation/ShopNavigator';
@@ -18,7 +23,7 @@ const ProductsList = () => {
 	);
 
 	return (
-		<>
+		<View style={styles.container}>
 			{loading ? (
 				<ActivityIndicator size="large" style={styles.loader} />
 			) : (
@@ -28,7 +33,7 @@ const ProductsList = () => {
 					keyExtractor={(item) => item.id.toString()}
 				/>
 			)}
-		</>
+		</View>
 	);
 };
 
