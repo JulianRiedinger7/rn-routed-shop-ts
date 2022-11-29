@@ -1,10 +1,17 @@
 import { View, Text } from 'react-native';
 import React from 'react';
+import { Item } from '../../../../types';
 
-const Product = () => {
+interface Props {
+	item: Item;
+}
+
+const Product = ({ item }: Props) => {
 	return (
 		<View>
-			<Text>Product</Text>
+			<Text>{item.title}</Text>
+			<Text>{item.image}</Text>
+			<Text>{item.price}</Text>
 		</View>
 	);
 };

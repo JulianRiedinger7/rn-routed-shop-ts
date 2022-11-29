@@ -11,12 +11,12 @@ interface Props {
 
 const Category = ({ item }: Props) => {
 	const navigation =
-		useNavigation<NativeStackNavigationProp<ShopStackParams>>();
+		useNavigation<NativeStackNavigationProp<ShopStackParams, 'Categories'>>();
 
 	return (
 		<TouchableOpacity
 			style={styles.container}
-			onPress={() => navigation.navigate('Products')}
+			onPress={() => navigation.navigate('Products', { category: item })}
 		>
 			<Text style={styles.title}>{item}</Text>
 		</TouchableOpacity>

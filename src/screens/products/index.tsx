@@ -1,12 +1,8 @@
-import { View, Text } from 'react-native';
 import React from 'react';
+import { ProductsList } from '../../components';
 
 const Products = () => {
-	return (
-		<View>
-			<Text>Products</Text>
-		</View>
-	);
+	return <ProductsList />;
 };
 
 export default Products;
