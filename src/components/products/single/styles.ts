@@ -9,6 +9,15 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.secondary,
     marginHorizontal: 50,
     borderRadius: 5,
+    shadowColor: "#000",
+  shadowOffset: {
+    width: 0,
+    height: 2,
+  },
+  shadowOpacity: 0.25,
+  shadowRadius: 3.84,
+
+  elevation: 5,
   },
   imageContainer:{
     flex: 1,

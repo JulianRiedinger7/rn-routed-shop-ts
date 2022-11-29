@@ -6,7 +6,7 @@ import { Categories, Detail, Products } from '../screens';
 export type ShopStackParams = {
 	Categories: undefined;
 	Products: { category: string };
-	Detail: undefined;
+	Detail: { title: string; productId: number };
 };
 
 const Stack = createNativeStackNavigator<ShopStackParams>();
@@ -33,7 +33,13 @@ const ShopNavigator = () => {
 					title: route.params.category.toUpperCase(),
 				})}
 			/>
-			<Stack.Screen name="Detail" component={Detail} />
+			<Stack.Screen
+				name="Detail"
+				component={Detail}
+				options={({ route }) => ({
+					title: route.params.title,
+				})}
+			/>
 		</Stack.Navigator>
 	);
 };

@@ -1,12 +1,8 @@
-import { View, Text } from 'react-native';
 import React from 'react';
+import { ProductDetail } from '../../components';
 
 const Detail = () => {
-	return (
-		<View>
-			<Text>Detail</Text>
-		</View>
-	);
+	return <ProductDetail />;
 };
 
 export default Detail;
